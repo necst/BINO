@@ -1,0 +1,8 @@
+angr==9.0.10576
+clang==10.0.1
+asciitree==0.3.3
+matplotlib==3.3.0
+pygraphviz==1.7
+pyelftools==0.27
+ipython==7.30.1
+protobuf==3.20.1

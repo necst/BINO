@@ -1,0 +1,44 @@
+{
+    "standard_include": "map",
+    "optional_includes": ["<string>"],
+    "class_name": "std::map",
+    "optional_typedefs" : ["typedef TYPE_1 key_type",
+                           "typedef TYPE_2 value_type"],
+    "tokens": [{
+                    "token_name" : "TYPE_1",
+                    "token_values" : ["int",
+                                    "long long",
+                                    "std::string"]
+                  },
+                  {
+                    "token_name" : "TYPE_2",
+                    "token_values" : ["int",
+                                    "double",
+                                    "float",
+                                    "char",
+                                    "char*",
+                                    "std::string",
+                                    "bool"]
+                  }
+                  ],
+    "template_values": [{
+                            "position": 0,
+                            "type": "string",
+                            "value": "key_type"
+                        },
+                        {
+                            "position": 1,
+                            "type": "string",
+                            "value": "value_type"
+                        },
+                        {
+                            "position": 2,
+                            "type": "none",
+                            "value": ""
+                        },
+                        {
+                            "position": 3,
+                            "type": "none",
+                            "value": ""
+                        }]
+}

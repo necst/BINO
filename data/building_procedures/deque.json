@@ -1,0 +1,27 @@
+{
+    "standard_include": "deque",
+    "optional_includes": ["<string>"],
+    "class_name": "std::deque",
+    "optional_typedefs" : ["typedef TYPE_1 array_type"],
+    "tokens": [{
+                    "token_name" : "TYPE_1",
+                    "token_values" : ["int",
+                                    "double",
+                                    "float",
+                                    "char",
+                                    "char*",
+                                    "bool",
+                                    "std::string"]
+                  }]
+    ,
+    "template_values": [{
+                            "position": 0,
+                            "type": "string",
+                            "value": "array_type"
+                        },
+                        {
+                            "position": 1,
+                            "type": "none",
+                            "value": ""
+                        }]
+}

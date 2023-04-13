@@ -1,0 +1,36 @@
+{
+    "standard_include": "vector",
+    "optional_includes": ["<string>"],
+    "class_name": "std::vector",
+    "optional_typedefs" : ["typedef TYPE_1 array_type"],
+    "tokens": [{
+                    "token_name" : "TYPE_1",
+                    "token_values" : ["int",
+                                    "double",
+                                    "float",
+                                    "char",
+                                    "char*",
+                                    "std::string"]
+                  }]
+    ,
+    "template_values": [{
+                            "position": 0,
+                            "type": "string",
+                            "value": "array_type"
+                        },
+                        {
+                            "position": 1,
+                            "type": "none",
+                            "value": ""
+                        }],
+    "public": [
+    {
+      "method_name": "emplace_back",
+      "return_type": "void",
+      "const_qualified": false,
+      "operator_type": "",
+      "parameters": [
+        "array_type &&"
+      ]
+    }]
+}

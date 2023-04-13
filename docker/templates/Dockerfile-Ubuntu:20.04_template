@@ -1,0 +1,49 @@
+FROM ubuntu:20.04
+
+ENV TZ=Europe/Rome
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+RUN apt-get update && apt-get install -y \
+python3.8 \
+python3.8-dev \
+python3-pip \
+apt-file \
+git \
+wget \
+clang-10 \
+graphviz-dev \
+libboost-all-dev \
+libx11-dev \
+nano \
+libssl-dev
+
+WORKDIR /home/inlinerecognizer
+
+COPY requirements.txt .
+
+RUN pip install -r requirements.txt
+
+COPY configurations configurations/
+COPY data data/ 
+COPY fingerprint fingerprint/
+COPY stages stages/ 
+COPY utils utils/ 
+COPY parsing parsing/ 
+COPY testing testing/
+COPY docker/images/$CLASS_NAME$/run.sh ./run.sh
+COPY docker/images/$CLASS_NAME$/no_hup_run.sh ./no_hup_run.sh
+COPY docker/scripts/git_testing.py ./git_testing.py
+COPY compiler_stage.py preprocessor_stage.py fingerprinter_stage.py storer_stage.py sources_builder_stage.py summaries_builder_stage.py install.sh uninstall.sh ./
+
+RUN chmod +x sources_builder_stage.py &&\
+    chmod +x preprocessor_stage.py &&\
+    chmod +x compiler_stage.py &&\
+    chmod +x summaries_builder_stage.py &&\
+    chmod +x fingerprinter_stage.py &&\
+    chmod +x storer_stage.py &&\
+    chmod +x git_testing.py &&\
+    chmod +x run.sh &&\
+    chmod +x no_hup_run.sh &&\
+    ln -s /usr/lib/llvm-10/lib/libclang-10.so.1 /usr/lib/llvm-10/lib/libclang-10.so
+
+CMD ["tail", "-f", "/dev/null"]

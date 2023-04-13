@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurations>
+  <ignored_colors>
+    <color>DATA_TRANSFER</color>
+    <color>NO_CLASS</color>
+  </ignored_colors>
+  <cpp_version>c++14</cpp_version>
+  <clang_version>10</clang_version>
+</configurations>

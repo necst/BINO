@@ -1,0 +1,6 @@
+#!/bin/bash
+
+set -e
+
+./data/github_projects/setup.py
+nohup python3 -u git_testing.py -ec -cs $CLASS_NAME$ -d > output.log &

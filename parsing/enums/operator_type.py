@@ -1,0 +1,42 @@
+from enum import Enum
+
+class OperatorType(Enum):
+
+    def __str__(self):
+        return self.value
+
+    NONE = ""
+    EQ = "operator="
+    EQ_EQ = "operator=="
+    NOT_EQ = "operator!="
+    ROUND_BRACKETS = "operator()"
+    SQUARE_BRACKETS = "operator[]"
+    PLUS = "operator+"
+    MINUS = "operator-"
+    MUL = "operator*"
+    PLUSPLUS = "operator++"
+    MINUSMINUS = "operator--"
+    GTGT = "operator>>"
+    LTLT = "operator<<"
+    SHR_EQ = "operator>>="
+    SHL_EQ = "operator<<="
+    PLUS_EQ = "operator+="
+    MINUS_EQ = "operator-="
+    MEMBER_ACCESS_PTR = "operator->"
+    NOT = "operator!"
+    AND_EQ = "operator&="
+    OR_EQ = "operator|="
+    XOR_EQ = "operator^="
+    MUL_EQ = "operator*="
+    DIV_EQ = "operator/="
+    PERC_EQ = "operator%="
+    GT_EQ = "operator>="
+    LT_EQ = "operator<="
+    GT = "operator>"
+    LT = "operator<"
+    COMMA = "operator,"
+    PTR_MEMBER_ACCESS_PTR = "operator->*"
+    PERC = "operator%"
+    XOR = "operator^"
+    INV = "operator~"
+    DIV = "operator/"
